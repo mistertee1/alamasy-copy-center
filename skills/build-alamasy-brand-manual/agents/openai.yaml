@@ -1,0 +1,4 @@
+interface:
+  display_name: "دليل تشغيل هوية الاماسي"
+  short_description: "نظام هوية تنفيذي لمركز الاماسي للطباعة والخدمات"
+  default_prompt: "Use $build-alamasy-brand-manual to create or audit the brand operating manual of الاماسي from its source repository."
