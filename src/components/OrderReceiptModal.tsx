@@ -5,6 +5,7 @@ import { STORE_INFO } from '../data/servicesData';
 import { createQuickPrintWhatsAppUrl, canShareFilesDirectly, shareFilesDirectly, getRawPriceBreakdownText } from '../utils/whatsapp';
 import { createOrderFromQuickPrint } from '../utils/ordersStore';
 import { WhatsAppFileDispatchModal } from './WhatsAppFileDispatchModal';
+import { BrandLogo } from './BrandLogo';
 
 interface OrderReceiptModalProps {
   config: PrintOrderConfig | null;
@@ -73,13 +74,7 @@ export const OrderReceiptModal: React.FC<OrderReceiptModalProps> = ({
         <div id="printable-receipt" className="text-center pt-2 pb-2">
           
           {/* Logo / Header */}
-          <div className="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center mx-auto mb-3 shadow-md">
-            <Printer className="w-6 h-6" />
-          </div>
-          
-          <h3 className="text-base font-black text-slate-900">
-            مكتبة وخدمات الطباعة
-          </h3>
+          <BrandLogo className="justify-center mb-3" />
           <p className="text-[11px] text-slate-500 font-medium mt-0.5">
             جمعية النعيم التعاونية — سوق القصر المركزي (الدور الميزانين)
           </p>

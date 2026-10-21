@@ -1,7 +1,7 @@
 import { TrackableOrder, OrderStatus, CustomServiceRequestData, PrintOrderConfig, PriceBreakdown } from '../types';
 import { STORE_INFO } from '../data/servicesData';
 
-const STORAGE_KEY = 'naeem_print_orders_db_v1';
+const STORAGE_KEY = 'alamasy_order_drafts_v1';
 
 // Initial pre-seeded demo orders representing various realistic states
 const SEED_ORDERS: TrackableOrder[] = [
@@ -136,17 +136,18 @@ const SEED_ORDERS: TrackableOrder[] = [
 
 // Helper to load all orders
 export function getAllOrders(): TrackableOrder[] {
-  if (typeof window === 'undefined') return SEED_ORDERS;
+  const initialOrders = import.meta.env.DEV ? SEED_ORDERS : [];
+  if (typeof window === 'undefined') return initialOrders;
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (!saved) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(SEED_ORDERS));
-      return SEED_ORDERS;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(initialOrders));
+      return initialOrders;
     }
     return JSON.parse(saved);
   } catch (err) {
     console.error('Failed to load orders from storage', err);
-    return SEED_ORDERS;
+    return initialOrders;
   }
 }
 

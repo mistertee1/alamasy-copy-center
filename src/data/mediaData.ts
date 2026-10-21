@@ -35,9 +35,9 @@ export const GALLERY_ITEMS: MediaItem[] = [
     categoryLabel: 'طباعة رقمية ليزر',
     src: 'https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-laser-cutting-machine-cutting-paper-42203-large.mp4',
     thumbnail: digitalLaserImg,
-    description: 'مشاهد حية لعمل مكائن الليزر الرقمية في طباعة وتجهيز المذكرات والبحوث والبروشورات بدقة متناهية وسرعة فائقة.',
+    description: 'مقطع توضيحي من مصدر خارجي لعمليات تجهيز المواد؛ لا يوثق معدات أو إنتاج فرع الاماسي.',
     duration: '0:35',
-    badge: 'فيديو تشغيلي',
+    badge: 'مثال توضيحي',
     relatedServiceId: 'research-reports'
   },
   {
@@ -50,7 +50,7 @@ export const GALLERY_ITEMS: MediaItem[] = [
     thumbnail: giftsAwardsImg,
     description: 'تفصيل وقص دقيق للدروع التذكارية، لوحات المكاتب، استاندات الأكريليك، وتوزيعات المناسبات بالليزر.',
     duration: '0:42',
-    badge: 'دقة ليزر 100%',
+    badge: 'مثال توضيحي',
     relatedServiceId: 'acrylic-laser-cut'
   },
   {
@@ -63,7 +63,7 @@ export const GALLERY_ITEMS: MediaItem[] = [
     thumbnail: giftsAwardsImg,
     description: 'عملية الكبس الحراري لطباعة الصور والشعارات على الأكواب السيراميك والمخدات والتيشرتات بألوان زاهية ومقاومة للغسيل.',
     duration: '0:28',
-    badge: 'ثبات حراري',
+    badge: 'مثال توضيحي',
     relatedServiceId: 'mugs-tshirts'
   },
 
@@ -71,13 +71,13 @@ export const GALLERY_ITEMS: MediaItem[] = [
   {
     id: 'img-store-interior',
     type: 'image',
-    title: 'صالة خدمة العملاء والمكتبة - سوق القصر بالميزانين',
+    title: 'تصور توضيحي لمساحة خدمات الطباعة',
     category: 'printing',
     categoryLabel: 'فرع المكتبة',
     src: heroInteriorImg,
     thumbnail: heroInteriorImg,
-    description: 'موقعنا المتميز داخل جمعية النعيم بسوق القصر المركزي بالدور الميزانين مع أحدث أجهزة الطباعة والتصوير.',
-    badge: 'فرع الجمعية'
+    description: 'صورة توضيحية ولا تمثل صورة موثقة للفرع الفعلي. تُراجع بيانات العنوان ضمن صفحة الاتصال.',
+    badge: 'صورة توضيحية'
   },
   {
     id: 'img-digital-print-quality',
@@ -112,7 +112,7 @@ export const GALLERY_ITEMS: MediaItem[] = [
     src: bannersStickersImg,
     thumbnail: bannersStickersImg,
     description: 'طباعة خامات قماش أصلية وقواعد ألومنيوم متينة للرول أب وبوسترات واستكرات فينيل ضد الماء والحرارة.',
-    badge: 'تسليم 24 ساعة',
+    badge: 'مثال توضيحي',
     relatedServiceId: 'rollup-banners'
   }
 ];

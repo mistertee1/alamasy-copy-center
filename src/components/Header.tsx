@@ -22,6 +22,7 @@ import { ActiveTab } from '../types';
 import { STORE_INFO } from '../data/servicesData';
 import { checkStoreOpenStatus } from '../utils/whatsapp';
 import { PrintPrepGuideTooltip } from './PrintPrepGuideTooltip';
+import { BrandLogo } from './BrandLogo';
 
 interface HeaderProps {
   activeTab: ActiveTab;
@@ -90,27 +91,12 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo and Store Title */}
-          <div 
+          <button type="button" aria-label="العودة إلى الرئيسية"
             onClick={() => setActiveTab('home')}
-            className="flex items-center gap-3 cursor-pointer group select-none"
+            className="flex items-center gap-3 cursor-pointer group select-none text-right"
           >
-            <div className="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-2xl font-black shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-200">
-              <Printer className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-base sm:text-lg font-black text-slate-900 tracking-tight leading-tight group-hover:text-blue-600 transition-colors">
-                  مكتبة وخدمات الطباعة
-                </span>
-                <span className="hidden sm:inline-block bg-blue-50 text-blue-700 border border-blue-200 text-[10px] font-bold px-2 py-0.5 rounded-full">
-                  جمعية النعيم
-                </span>
-              </div>
-              <p className="text-[11px] text-slate-500 font-medium mt-0.5">
-                سوق القصر المركزي • الدور الميزانين
-              </p>
-            </div>
-          </div>
+            <BrandLogo />
+          </button>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/80">
@@ -155,7 +141,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
               className="flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white px-4 py-2.5 rounded-full text-xs font-bold shadow-md shadow-blue-500/20 hover:shadow-lg transition-all"
             >
               <FileUp className="w-3.5 h-3.5" />
-              <span>طباعة فورية</span>
+              <span>طلب طباعة</span>
             </button>
 
             <a

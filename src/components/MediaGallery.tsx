@@ -105,15 +105,15 @@ export const MediaGallery: React.FC<MediaGalleryProps> = ({
         <div className="relative z-10 max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 text-xs font-bold mb-4">
             <VideoIcon className="w-3.5 h-3.5 text-blue-400" />
-            <span>معرض الصور وفيديوهات التنفيذ المباشر</span>
+            <span>معرض توضيحي للخدمات والخامات</span>
           </div>
 
           <h1 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
-            جولة بصرية في <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-200">أحدث أعمالنا ومكائن الطباعة</span>
+            جولة بصرية في <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-sky-200 to-indigo-200">نماذج الطباعة والتجهيز</span>
           </h1>
 
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
-            شاهد كفاءة أجهزتنا الرقمية بدقة الليزر، نماذج الدروع الكريستالية، الطباعة الحرارية على الأكواب، رول أب البنرات، ومشاريع التخرج المنفذة في فرعنا بسوق القصر المركزي (الدور الميزانين).
+            الصور والفيديوهات أمثلة توضيحية لفئات الخدمات وليست توثيقًا لمكائن أو أعمال منفذة في فرع الاماسي. تُحدد مواصفات التنفيذ عند طلب عرض السعر.
           </p>
 
           {/* Action Row */}

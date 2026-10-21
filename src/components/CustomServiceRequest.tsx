@@ -154,7 +154,7 @@ ${formData.description}
     setIsSubmitting(true);
 
     try {
-      // 1. Try sending to server-side API route for real email dispatch & logging
+      // 1. Attempt API registration; a successful response is not proof of email delivery.
       let generatedId = `REQ-${Math.floor(1000 + Math.random() * 9000)}`;
       let emailSuccess = false;
 
@@ -170,7 +170,7 @@ ${formData.description}
           if (resData.trackingId) {
             generatedId = resData.trackingId;
           }
-          emailSuccess = true;
+          emailSuccess = Boolean(resData.emailSent);
         }
       } catch (apiErr) {
         console.warn('API call fallback to client storage & mailto/whatsapp', apiErr);
@@ -182,7 +182,7 @@ ${formData.description}
 
       setSubmittedOrder({
         id: savedOrder.id,
-        emailSent: true,
+        emailSent: emailSuccess,
         customerName: formData.customerName
       });
 
@@ -235,7 +235,7 @@ ${formData.description}
             نموذج طلب خدمة وتصميم مخصص
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            أرسل متطلباتك وملفات التصميم والشعارات الخاصة بك. يتم إشعار مسؤول المكتبة فوراً عبر البريد الإلكتروني (<span className="text-blue-700 font-mono font-bold">naeem.print.kw@gmail.com</span>) وإصدار رقم تتبع مباشر لطلبك.
+            سجّل تفاصيل الطلب لمراجعتها، ثم أرسلها عبر واتساب إلى فريق الاماسي. التسجيل على هذا الجهاز لا يؤكد قبول الطلب أو إرسال بريد إلكتروني.
           </p>
         </div>
 
@@ -247,10 +247,10 @@ ${formData.description}
             </div>
 
             <h2 className="text-2xl font-black text-slate-900 mb-2">
-              تم استلام طلبك وإرساله لإدارة المكتبة بنجاح!
+              {submittedOrder.emailSent ? 'تم حفظ طلبك وإرسال إشعار البريد' : 'تم حفظ مسودة الطلب على هذا الجهاز'}
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
-              شكراً لك أستاذ/ة <strong className="text-slate-900">{submittedOrder.customerName}</strong>. تم إرسال كافة التفاصيل والمرفقات إلى البريد الإلكتروني لمسؤول المكتبة (<span className="text-blue-600 font-semibold">{STORE_INFO.email}</span>).
+              شكرًا لك أستاذ/ة <strong className="text-slate-900">{submittedOrder.customerName}</strong>. لإرسال تفاصيل طلبك للفريق، افتح رسالة واتساب وأكّد إرسالها بنفسك. رقم المسودة وحده لا يعني قبول الطلب.
             </p>
 
             {/* Tracking ID Badge */}
@@ -583,7 +583,7 @@ ${formData.description}
                     {isSubmitting ? (
                       <>
                         <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        <span>جاري إرسال الطلب وإشعار إدارة المكتبة...</span>
+                        <span>جاري حفظ بيانات المسودة...</span>
                       </>
                     ) : (
                       <>
@@ -595,7 +595,7 @@ ${formData.description}
 
                   <div className="mt-3 flex items-center justify-center gap-2 text-[11px] text-slate-500 text-center">
                     <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                    <span>سيتم إرسال إشعار فوري بكافة التفاصيل إلى بريد مسؤول المكتبة (<strong className="text-slate-700">{STORE_INFO.email}</strong>).</span>
+                    <span>بعد الحفظ استخدم زر واتساب لإرسال التفاصيل. لا يتم إرسال بريد تلقائي حاليًا.</span>
                   </div>
                 </div>
 

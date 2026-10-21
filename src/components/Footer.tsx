@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { STORE_INFO } from '../data/servicesData';
 import { ActiveTab } from '../types';
+import { BrandLogo } from './BrandLogo';
 
 interface FooterProps {
   setActiveTab: (tab: ActiveTab) => void;
@@ -27,19 +28,12 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab }) => {
           
           {/* Col 1: Brand & Location */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-600/20">
-                <Printer className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-base font-black text-white">خدمة الطباعة والتصوير</h3>
-                <p className="text-xs text-blue-400 font-semibold">جمعية النعيم التعاونية</p>
-              </div>
-            </div>
+            <BrandLogo inverse />
             
             <p className="text-xs text-slate-400 leading-relaxed">
-              وجهتكم الأولى لخدمات الطباعة الرقمية، الأبحاث المدرسية والجامعية، المعاملات الحكومية، والدعاية والإعلان في منطقة النعيم والجهراء.
+              خدمات طباعة ونسخ وتجهيز ملفات وطلبات مخصصة، مع مساعدتك على تحديد المواصفات قبل اعتماد التنفيذ.
             </p>
+            <p className="text-xs text-slate-400 leading-relaxed">خدمات تجهيز المعاملات خدمة خاصة مستقلة، ولا تتبع أي جهة حكومية.</p>
 
             <div className="text-xs text-slate-400 space-y-2 pt-2">
               <div className="flex items-start gap-2">

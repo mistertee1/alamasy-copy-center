@@ -1,0 +1,22 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "identity": { "nameAr": "الاماسي", "locale": "ar-KW", "direction": "rtl", "version": "1.0.0-candidate" },
+  "color": {
+    "brand": { "primary": "#1D4ED8", "hover": "#1E40AF", "soft": "#DBEAFE", "ink": "#0F172A", "accent": "#FBBF24" },
+    "text": { "default": "#1E293B", "muted": "#475569", "inverse": "#FFFFFF" },
+    "surface": { "page": "#F1F5F9", "card": "#FFFFFF", "border": "#CBD5E1" },
+    "focus": "#1D4ED8",
+    "channel": { "whatsapp": "#25D366", "whatsappInk": "#052E16" },
+    "status": {
+      "reviewing": { "bg": "#FFFBEB", "fg": "#92400E" },
+      "processing": { "bg": "#EFF6FF", "fg": "#1D4ED8" },
+      "ready_for_pickup": { "bg": "#ECFDF5", "fg": "#047857" },
+      "completed": { "bg": "#F1F5F9", "fg": "#334155" },
+      "cancelled": { "bg": "#FFF1F2", "fg": "#BE123C" }
+    }
+  },
+  "typography": { "family": "Cairo, Tajawal, sans-serif", "weights": [400,600,700,800], "bodyPx": 16, "bodyMinPx": 14, "lineHeight": 1.6, "headingPx": [24,32,40] },
+  "layout": { "unitPx": 4, "spacingPx": [4,8,12,16,24,32,48,64], "maxWidthPx": 1280, "breakpointsPx": [640,1024], "gutterPx": [16,24,32], "minTargetPx": 44, "radiusPx": { "control": 12, "card": 16, "feature": 24 } },
+  "icon": { "set": "lucide-react", "sizePx": 24, "strokePx": 2 },
+  "motion": { "interactionMs": 150, "dialogMaxMs": 250, "reducedMotion": true }
+}

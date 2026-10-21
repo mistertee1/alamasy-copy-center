@@ -3,13 +3,13 @@ import path from 'path';
 import { createServer as createViteServer } from 'vite';
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT || 3000);
 
 app.use(express.json({ limit: '25mb' }));
 app.use(express.urlencoded({ extended: true, limit: '25mb' }));
 
 // In-memory backing storage for server-side persistence
-const inMemoryOrders: any[] = [
+const inMemoryOrders: any[] = process.env.NODE_ENV === 'production' ? [] : [
   {
     id: 'ORD-7104',
     customerName: 'فهد الشمري',
@@ -104,11 +104,16 @@ const inMemoryOrders: any[] = [
 
 // Health Check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', store: 'مكتبة وخدمات الطباعة - جمعية النعيم سوق القصر المركزي' });
+  res.json({ status: 'ok', store: 'الاماسي' });
 });
 
 // Custom Service Request Submission & Email Dispatch API
 app.post('/api/custom-request', async (req, res) => {
+  // The current server has no durable database or email provider.
+  // Refuse public submissions rather than accepting and silently losing customer data.
+  if (process.env.NODE_ENV === 'production') {
+    return res.status(503).json({ error: 'التسجيل السحابي غير متاح حالياً. يرجى إرسال الطلب عبر واتساب.' });
+  }
   try {
     const {
       customerName,
@@ -199,17 +204,14 @@ ${attachedFiles.map((f: any, idx: number) => `  ${idx + 1}. ${f.name} (${f.size 
 `
     };
 
-    console.log('--- NEW CUSTOM REQUEST RECEIVED & EMAIL DISPATCHED ---');
-    console.log(emailPayload.subject);
-    console.log(emailPayload.emailBody);
-    console.log('------------------------------------------------------');
+    // Never print customer details or uploaded file metadata to application logs.
 
     return res.status(200).json({
       success: true,
       trackingId,
-      message: 'تم استلام طلبكم وإشعار مسؤول المكتبة عبر البريد الإلكتروني بنجاح.',
+      message: 'تم حفظ الطلب في ذاكرة بيئة التطوير فقط. لم يُرسل بريد إلكتروني.',
       order: newOrder,
-      emailSentTo: 'naeem.print.kw@gmail.com'
+      emailSent: false
     });
   } catch (error: any) {
     console.error('Error handling custom request:', error);
@@ -219,10 +221,12 @@ ${attachedFiles.map((f: any, idx: number) => `  ${idx + 1}. ${f.name} (${f.size 
 
 // Orders API Routes
 app.get('/api/orders', (req, res) => {
+  if (process.env.NODE_ENV === 'production') return res.status(403).json({ error: 'هذه الواجهة غير مفعلة للاستخدام العام.' });
   res.json({ success: true, orders: inMemoryOrders });
 });
 
 app.get('/api/orders/:id', (req, res) => {
+  if (process.env.NODE_ENV === 'production') return res.status(403).json({ error: 'التتبع السحابي غير متاح.' });
   const query = req.params.id.trim().toLowerCase();
   const order = inMemoryOrders.find(
     o => o.id.toLowerCase() === query || 
@@ -237,6 +241,7 @@ app.get('/api/orders/:id', (req, res) => {
 });
 
 app.post('/api/orders', (req, res) => {
+  if (process.env.NODE_ENV === 'production') return res.status(403).json({ error: 'الحفظ السحابي غير متاح.' });
   const newOrder = req.body;
   if (!newOrder || !newOrder.id) {
     return res.status(400).json({ error: 'بيانات الطلب غير مكتملة' });
@@ -246,6 +251,7 @@ app.post('/api/orders', (req, res) => {
 });
 
 app.patch('/api/orders/:id/status', (req, res) => {
+  if (process.env.NODE_ENV === 'production') return res.status(403).json({ error: 'تحديثات الإدارة غير متاحة للعامة.' });
   const { id } = req.params;
   const { status, note, estimatedReadyTime } = req.body;
   const order = inMemoryOrders.find(o => o.id.toLowerCase() === id.toLowerCase());
