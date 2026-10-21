@@ -88,7 +88,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
 
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex h-28 items-center justify-between">
           
           {/* Logo and Store Title */}
           <button type="button" aria-label="العودة إلى الرئيسية"

@@ -104,7 +104,7 @@ const inMemoryOrders: any[] = process.env.NODE_ENV === 'production' ? [] : [
 
 // Health Check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', store: 'الاماسي' });
+  res.json({ status: 'ok', store: 'مكتبة الأماسي' });
 });
 
 // Custom Service Request Submission & Email Dispatch API

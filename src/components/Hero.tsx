@@ -68,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
 
               {/* Headline */}
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight sm:leading-tight tracking-tight mb-3">
-                الاماسي<br />
+                مكتبة الأماسي<br />
                 <span className="text-blue-600">خدمات الطباعة والنسخ والطلبات المخصصة</span>
               </h1>
 
