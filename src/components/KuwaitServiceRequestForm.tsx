@@ -933,13 +933,9 @@ export const KuwaitServiceRequestForm: React.FC<KuwaitServiceRequestFormProps> =
                 {/* 2. Direct Instant K-Net */}
                 <button
                   type="button"
-                  onClick={() => {
-                    setPaymentMethod('knet_paid');
-                    if (!knetReference) {
-                      setShowKnetModal(true);
-                    }
-                  }}
-                  className={`p-3.5 rounded-2xl border text-right transition flex flex-col justify-between ${
+                  disabled
+                  aria-disabled="true"
+                  className={`p-3.5 rounded-2xl border text-right transition flex flex-col justify-between opacity-50 cursor-not-allowed ${
                     paymentMethod === 'knet_paid'
                       ? 'bg-emerald-50 border-emerald-600 ring-2 ring-emerald-500/20 shadow-sm'
                       : 'bg-white border-slate-200 hover:border-slate-300'
@@ -947,13 +943,13 @@ export const KuwaitServiceRequestForm: React.FC<KuwaitServiceRequestFormProps> =
                 >
                   <div>
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-black text-xs text-emerald-900">دفع فوري الآن K-Net</span>
+                      <span className="font-black text-xs text-emerald-900">الدفع المباشر غير متاح</span>
                       <span className="text-[10px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.2 rounded">
-                        فوري وآمن
+                        معطّل
                       </span>
                     </div>
                     <p className="text-[11px] text-slate-500 leading-relaxed">
-                      سداد رسوم فتح المعاملة (5.000 د.ك) مباشرة عبر محاكي بوابة K-Net الكويتية.
+                      لا تدخل بيانات بطاقتك هنا. يُحدد الدفع بعد مراجعة الطلب عبر وسيلة رسمية مؤكدة.
                     </p>
                   </div>
 

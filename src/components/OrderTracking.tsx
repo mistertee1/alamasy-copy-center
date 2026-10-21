@@ -447,11 +447,11 @@ export const OrderTracking: React.FC<OrderTrackingProps> = ({
             <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
               <span className="text-xs font-bold text-slate-500 flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                <span>نماذج طلبات لتجربة التتبع الفوري:</span>
+                <span>{import.meta.env.DEV ? 'نماذج لتجربة التتبع:' : 'مسودات هذا الجهاز (ليست تتبعًا سحابيًا):'}</span>
               </span>
               
               {/* Staff Mode Toggle */}
-              <button
+              {import.meta.env.DEV && <button
                 type="button"
                 onClick={() => setIsStaffMode(!isStaffMode)}
                 className={`text-xs font-bold flex items-center gap-1.5 px-3 py-1 rounded-full transition ${
@@ -462,7 +462,7 @@ export const OrderTracking: React.FC<OrderTrackingProps> = ({
               >
                 <SlidersHorizontal className="w-3 h-3" />
                 <span>{isStaffMode ? 'لوحة الموظف (نشطة)' : 'لوحة تحكم وتحديث الحالة'}</span>
-              </button>
+              </button>}
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -489,7 +489,7 @@ export const OrderTracking: React.FC<OrderTrackingProps> = ({
             </div>
 
             {/* Quick Simulation Banner Button */}
-            {currentOrder && (
+            {import.meta.env.DEV && currentOrder && (
               <div className="mt-4 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 bg-gradient-to-r from-blue-50/60 to-emerald-50/60 p-3.5 rounded-2xl border border-blue-100">
                 <div className="flex items-center gap-2 text-xs text-slate-700">
                   <Zap className="w-4 h-4 text-amber-500 fill-amber-500" />
@@ -928,7 +928,7 @@ export const OrderTracking: React.FC<OrderTrackingProps> = ({
                 </div>
 
                 {/* Staff / Admin Management Box (When toggled) */}
-                {isStaffMode && (
+                {import.meta.env.DEV && isStaffMode && (
                   <div className="bg-amber-50/90 border-2 border-amber-300 rounded-[2rem] p-6 shadow-md">
                     <div className="flex items-center gap-2 text-xs font-black text-amber-900 mb-2">
                       <ShieldCheck className="w-4 h-4 text-amber-700" />

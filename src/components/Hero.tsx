@@ -68,12 +68,12 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
 
               {/* Headline */}
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 leading-tight sm:leading-tight tracking-tight mb-3">
-                مكتبة وخدمات الطباعة والتصوير<br />
-                <span className="text-blue-600">جمعية النعيم سوق القصر المركزي</span>
+                الاماسي<br />
+                <span className="text-blue-600">خدمات الطباعة والنسخ والطلبات المخصصة</span>
               </h1>
 
               <p className="text-xs sm:text-sm text-slate-600 max-w-xl leading-relaxed mb-6">
-                وجهتكم الأولى للطباعة السريعة، الخدمات الطالبية، المعاملات الحكومية، الدروع والهدايا، وتصميم البنرات. ارفع ملفاتك فوراً وتتبع حالة طلبك خطوة بخطوة.
+                جهّز ملفات الطباعة، حدّد الورق والتشطيب، واطلب مراجعة التكلفة قبل التنفيذ. ونساعدك أيضًا في تجهيز مستندات المعاملات دون صفة حكومية.
               </p>
             </div>
 
@@ -84,8 +84,8 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
                 className="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 text-white px-5 py-3 rounded-2xl font-bold text-xs sm:text-sm hover:from-amber-700 hover:to-amber-700 shadow-lg shadow-amber-200 transition-all active:scale-95 flex items-center gap-2"
               >
                 <FileCheck2 className="w-4 h-4 text-amber-100" />
-                <span>تخليص المعاملات الحكومية</span>
-                <span className="bg-white/20 text-[10px] px-2 py-0.5 rounded-full font-black">طلب فوري</span>
+                <span>مساعدة في تجهيز المعاملات</span>
+                <span className="bg-white/20 text-[10px] px-2 py-0.5 rounded-full font-black">خدمة خاصة</span>
               </button>
 
               <button
@@ -141,15 +141,15 @@ export const Hero: React.FC<HeroProps> = ({ setActiveTab }) => {
             <div className="relative z-10 mt-6 pt-5 border-t border-slate-100 flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-500">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                <span>استلام فوري بالميزانين</span>
+                <span>استلام بعد تأكيد الجاهزية</span>
               </span>
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-blue-500" />
-                <span>إشعارات واتساب تلقائية</span>
+                <span>التواصل وتأكيد الطلب عبر واتساب</span>
               </span>
               <span className="flex items-center gap-1.5">
                 <Sparkles className="w-4 h-4 text-amber-500" />
-                <span>دقة ليزر 1200 DPI</span>
+                <span>مراجعة مواصفات الطباعة قبل التنفيذ</span>
               </span>
             </div>
           </section>

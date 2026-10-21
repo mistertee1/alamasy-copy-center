@@ -25,6 +25,9 @@ export const ClearanceServicesView: React.FC<ClearanceServicesViewProps> = ({
 
   return (
     <div className="space-y-6">
+      <p className="max-w-4xl mx-auto px-4 pt-3 text-xs text-slate-600 leading-relaxed">
+        الاماسي خدمة خاصة للمساعدة في تجهيز المستندات. لسنا جهة حكومية، وتُراجع الرسوم والإجراءات الرسمية لدى الجهة المختصة.
+      </p>
       {/* Subview Selector Tabs */}
       <div className="max-w-4xl mx-auto px-4 pt-4">
         <div className="bg-white p-1.5 rounded-2xl border border-slate-200 shadow-xs flex items-center gap-1.5">
@@ -40,7 +43,7 @@ export const ClearanceServicesView: React.FC<ClearanceServicesViewProps> = ({
             <FileText className="w-4 h-4" />
             <span>نموذج طلب المعاملة التفاعلي</span>
             <span className="hidden sm:inline-block text-[10px] bg-white/20 text-white px-2 py-0.5 rounded-full font-bold">
-              معتمد
+              طلب مساعدة
             </span>
           </button>
 
