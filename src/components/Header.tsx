@@ -99,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
           </button>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/80">
+          <nav className="hidden 2xl:flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-2xl border border-slate-200/80">
             {navItems.map((item) => {
               const isActive = activeTab === item.id;
               return (
@@ -125,7 +125,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
           </nav>
 
           {/* Action CTAs: Track Order & Print & WhatsApp */}
-          <div className="hidden sm:flex items-center gap-2.5">
+          <div className="hidden xl:flex 2xl:hidden items-center gap-2.5">
             <PrintPrepGuideTooltip buttonText="استفسار الملفات" variant="pill" align="left" />
 
             <button
@@ -156,21 +156,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
           </div>
 
           {/* Mobile Menu Toggle Button */}
-          <div className="flex lg:hidden items-center gap-2">
-            <button
-              onClick={() => setActiveTab('track-order')}
-              className="sm:hidden flex items-center gap-1 bg-slate-100 border border-slate-200 text-slate-800 px-3 py-2 rounded-xl text-xs font-bold"
-            >
-              <Package className="w-3.5 h-3.5 text-blue-600" />
-              <span>تتبع</span>
-            </button>
-            <button
-              onClick={() => setActiveTab('quick-print')}
-              className="sm:hidden flex items-center gap-1 bg-blue-600 text-white px-3 py-2 rounded-xl text-xs font-bold"
-            >
-              <FileUp className="w-3.5 h-3.5" />
-              <span>طباعة</span>
-            </button>
+          <div className="flex 2xl:hidden items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 border border-slate-200 focus:outline-none"
@@ -185,7 +171,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top-2">
+        <div className="2xl:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top-2">
           <div className="space-y-1.5">
             {navItems.map((item) => {
               const isActive = activeTab === item.id;
