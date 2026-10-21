@@ -1,6 +1,6 @@
 {
   "$schema": "https://design-tokens.github.io/community-group/format/",
-  "identity": { "nameAr": "الاماسي", "locale": "ar-KW", "direction": "rtl", "version": "1.0.0-candidate" },
+  "identity": { "nameAr": "مكتبة الأماسي", "locale": "ar-KW", "direction": "rtl", "version": "1.1.0", "approvedLogo": "/alamasy-approved-logo.png", "logoType": "owner-approved-raster" },
   "color": {
     "brand": { "primary": "#1D4ED8", "hover": "#1E40AF", "soft": "#DBEAFE", "ink": "#0F172A", "accent": "#FBBF24" },
     "text": { "default": "#1E293B", "muted": "#475569", "inverse": "#FFFFFF" },
