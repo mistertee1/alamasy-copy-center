@@ -1,0 +1,53 @@
+{
+  "_status": "source-derived candidate baseline; not signed off as production identity",
+  "_source_commit": "5570c0a68e6993e3203f017d4a1e0e97594f7500",
+  "brand": {
+    "displayNameAr": "الاماسي",
+    "displayNameEnCandidate": "Alamasy",
+    "language": "ar-KW",
+    "direction": "rtl"
+  },
+  "colors": {
+    "primary": "#2563EB",
+    "primaryHover": "#1D4ED8",
+    "primarySoft": "#DBEAFE",
+    "navy": "#0F172A",
+    "text": "#1E293B",
+    "mutedText": "#475569",
+    "surface": "#F1F5F9",
+    "surfaceElevated": "#FFFFFF",
+    "border": "#CBD5E1",
+    "focus": "#1D4ED8",
+    "serviceAccent": "#F59E0B",
+    "serviceAccentText": "#0F172A",
+    "whatsappChannel": "#25D366",
+    "whatsappForegroundCandidate": "#052E16",
+    "status": {
+      "reviewing": { "background": "#FFFBEB", "foreground": "#92400E" },
+      "processing": { "background": "#EFF6FF", "foreground": "#1D4ED8" },
+      "ready_for_pickup": { "background": "#ECFDF5", "foreground": "#047857" },
+      "completed": { "background": "#F1F5F9", "foreground": "#334155" },
+      "cancelled": { "background": "#FFF1F2", "foreground": "#BE123C" }
+    }
+  },
+  "type": {
+    "arabicPrimary": "Cairo",
+    "arabicFallback": "Tajawal",
+    "weights": [400, 600, 700, 800],
+    "sizePx": { "caption": 12, "bodyMinimum": 14, "bodyPreferred": 16, "headingSmall": 24, "headingMedium": 32, "headingLarge": 40 },
+    "bodyLineHeight": 1.6
+  },
+  "layout": {
+    "baseUnitPx": 4,
+    "spacingPx": [4, 8, 12, 16, 24, 32, 48, 64],
+    "maxContentWidthPx": 1280,
+    "breakpointPx": { "tablet": 640, "desktop": 1024 },
+    "gutterPx": { "mobile": 16, "tablet": 24, "desktop": 32 },
+    "controlMinTargetPx": 44,
+    "radiusPx": { "control": 12, "card": 16, "feature": 24 }
+  },
+  "motion": { "interactionMs": 150, "dialogMaxMs": 250, "honorReducedMotion": true },
+  "icons": { "library": "lucide-react", "defaultSizePx": 24, "strokeWidthPx": 2 },
+  "print": { "defaultBleedMm": 3, "imageMinPpi": 300, "smallCollateralSafetyMm": 3, "vendorProfileRequired": true },
+  "releaseRequirements": { "minimumTextContrast": 4.5, "minimumLargeTextContrast": 3, "minimumControlContrast": 3 }
+}
